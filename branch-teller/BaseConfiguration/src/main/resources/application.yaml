@@ -1,0 +1,46 @@
+server:
+  port: 8086
+# Enable the endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    enabled-by-default: true
+spring:
+  messages:
+    basename: i18n/branch-messages,i18n/base-messages,i18n/user-management-messages
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/auth/realms/blubank
+      client:
+        provider:
+          blubank:
+            issuer-uri: http://localhost:8080/realms/blubank
+keycloak:
+  enabled: true
+
+app:
+  hikari:
+    main-data-source:
+      username: admin
+      password: admin
+      driverClassName: org.h2.Driver
+      jdbcUrl: jdbc:h2:mem:BranchTeller
+    report-data-source:
+      username: admin
+      password: admin
+      driverClassName: org.h2.Driver
+      jdbcUrl: jdbc:h2:mem:BranchTeller_report
+
+logging:
+  level:
+    org.springframework.security: debug
+    org.keycloak: debug
+    org:
+      springframework:
+        jdbc:
+          datasource: debug
+

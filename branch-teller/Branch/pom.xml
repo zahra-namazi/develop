@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>ir.rahgozin.branch.teller</groupId>
+        <artifactId>branch-teller-parent</artifactId>
+        <version>0.0.1</version>
+    </parent>
+    <groupId>ir.rahgozin.branch.teller</groupId>
+    <artifactId>branch-teller</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>BranchTeller</name>
+    <description>Branch Teller Service</description>
+    <properties>
+        <java.version>21</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>ir.rahgozin.branch.teller</groupId>
+            <artifactId>base-configuration</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>ir.rahgozin.branch.teller</groupId>
+            <artifactId>user-management</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <compilerArguments>
+                        <arg>-Duser.timezone=UTC</arg>
+                    </compilerArguments>
+                    <mainClass>ir.rahgozin.branch.BranchTellerApplication</mainClass>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+</project>

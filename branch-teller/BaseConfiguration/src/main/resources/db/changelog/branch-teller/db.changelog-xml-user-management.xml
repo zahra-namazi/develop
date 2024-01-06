@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="1" author="reza">
+        <createTable tableName="BT_USER">
+            <column name="ID" type="int">
+                <constraints primaryKey="true"></constraints>
+            </column>
+            <column name="USERNAME" type="varchar(30)">
+                <constraints nullable="false" notNullConstraintName="user.username_not_null_constraint"></constraints>
+            </column>
+            <column name="NAME" type="varchar(200)">
+                <constraints nullable="false" notNullConstraintName="user.name_not_null_constraint"></constraints>
+            </column>
+
+            <column name="ACTIVE" defaultValue="true" type="boolean">
+                <constraints nullable="false" notNullConstraintName="user_active_not_null_constraint"></constraints>
+            </column>
+            
+            <column name="DESCRIPTION" type="varchar(250)" ></column>
+
+            <!--Audit fields -->
+            <column name="CREATED_DATE" type="timestamp(6)">
+                <constraints nullable="false" notNullConstraintName="user_created_date_not_null_constraint"></constraints>
+            </column>
+            <column name="MODIFIED_DATE" type="timestamp(6)">
+                <constraints nullable="false" notNullConstraintName="user_cmodified_date_not_null_constraint"></constraints>
+            </column>
+            <column name="CREATED_BY" type="varchar(20">
+                <constraints nullable="false" notNullConstraintName="user_created_by_not_null_constraint"></constraints>
+            </column>
+            <column name="MODIFIED_BY" type="varchar(20">
+                <constraints nullable="false" notNullConstraintName="user_modified_by_not_null_constraint"></constraints>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
