@@ -1,0 +1,12 @@
+app:
+  hikari:
+    main-data-source:
+      username: admin
+      password: admin
+      driverClassName: org.h2.Driver
+      jdbcUrl: jdbc:h2:mem:BranchTeller
+    report-data-source:
+      username: admin
+      password: admin
+      driverClassName: org.h2.Driver
+      jdbcUrl: jdbc:h2:mem:BranchTeller_report
