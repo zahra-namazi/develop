@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @Log4j2
 public class UserControllerImpl implements UserController {
 
-    private UserService userService;
+    private final UserService userService;
 
      public UserControllerImpl(UserService service) {
          this.userService = service;
