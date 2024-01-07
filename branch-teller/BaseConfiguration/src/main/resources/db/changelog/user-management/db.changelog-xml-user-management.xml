@@ -13,6 +13,9 @@
             <column name="NAME" type="varchar(200)">
                 <constraints nullable="false" notNullConstraintName="user.name_not_null_constraint"></constraints>
             </column>
+            <column name="BRANCH_SORT_CODE" type="varchar(10)">
+                <constraints nullable="false" notNullConstraintName="user.branch_sort_code_not_null_constraint"></constraints>
+            </column>
 
             <column name="ACTIVE" defaultValue="true" type="boolean">
                 <constraints nullable="false" notNullConstraintName="user_active_not_null_constraint"></constraints>

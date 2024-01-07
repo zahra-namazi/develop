@@ -1,7 +1,8 @@
 package ir.rahgozin.branch.user.api;
 
 
-import ir.rahgozin.branch.user.api.dto.UserDTO;
+import ir.rahgozin.branch.user.api.dto.RequestUserDTO;
+import ir.rahgozin.branch.user.api.dto.ResponseUserDTO;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,5 +11,5 @@ import org.springframework.web.bind.annotation.*;
 public interface UserController {
 
     @PostMapping(value = "/create-action")
-    ResponseEntity<Long> addUser(@Valid @RequestBody UserDTO userDTO);
+    ResponseEntity<ResponseUserDTO> addUser(@Valid @RequestBody RequestUserDTO requestUserDTO);
 }

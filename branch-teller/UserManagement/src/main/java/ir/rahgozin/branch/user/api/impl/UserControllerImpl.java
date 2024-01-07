@@ -2,7 +2,8 @@ package ir.rahgozin.branch.user.api.impl;
 
 
 import ir.rahgozin.branch.user.api.UserController;
-import ir.rahgozin.branch.user.api.dto.UserDTO;
+import ir.rahgozin.branch.user.api.dto.RequestUserDTO;
+import ir.rahgozin.branch.user.api.dto.ResponseUserDTO;
 import ir.rahgozin.branch.user.service.UserService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
@@ -19,9 +20,9 @@ public class UserControllerImpl implements UserController {
      }
 
     //@PreAuthorize("hasRole('user')")
-    public ResponseEntity<Long> addUser(UserDTO userDTO) {
-        Long userId = userService.addNewUser(userDTO);
-        return ResponseEntity.ok(userId);
+    public ResponseEntity<ResponseUserDTO> addUser(RequestUserDTO requestUserDTO) {
+        ResponseUserDTO dto= userService.addNewUser(requestUserDTO);
+        return ResponseEntity.ok(dto);
     }
 
 }

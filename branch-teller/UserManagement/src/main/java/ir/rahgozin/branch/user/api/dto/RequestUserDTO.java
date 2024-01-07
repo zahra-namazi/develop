@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Pattern;
 import lombok.Builder;
 
 @Builder
-public record UserDTO(
+public record RequestUserDTO(
 
         @NotNull(message = "{user.username.required}")
         @NotBlank(message = "{user.username.required}")
@@ -15,6 +15,9 @@ public record UserDTO(
         @NotNull(message = "{user.name.required}")
         @NotBlank(message = "{user.name.required}")
         String name,
+        @NotNull(message = "{user.branch.sort.Code.required}")
+        @NotBlank(message = "{user.branch.sort.code.required}")
+        String branchSortCode,
 
         @NotNull(message = "{user.active.required}")
         @NotBlank(message = "{user.active.required}")
