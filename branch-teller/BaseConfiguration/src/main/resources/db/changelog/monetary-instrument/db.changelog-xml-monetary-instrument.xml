@@ -2,26 +2,23 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
-    <changeSet id="1" author="reza">
-        <createTable tableName="BT_USER">
-            <column name="ID" type="int">
-                <constraints primaryKey="true"></constraints>
+    <changeSet id="1" author="zahra">
+        <createTable tableName="BT_MONETARY_INSTRUMENT">
+            <column autoIncrement="true" defaultOnNull="false" name="MONETARY_INSTRUMENT_ID" type="NUMBER(19, 0)">
+                <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="USERNAME" type="varchar(30)">
-                <constraints nullable="false" notNullConstraintName="user.username_not_null_constraint"></constraints>
+            <column name="CODE" type="VARCHAR2(10 CHAR)">
+                <constraints nullable="false"/>
             </column>
-            <column name="NAME" type="varchar(200)">
-                <constraints nullable="false" notNullConstraintName="user.name_not_null_constraint"></constraints>
+            <column name="CURRENCY" type="VARCHAR2(3 CHAR)">
+                <constraints nullable="false"/>
             </column>
-            <column name="BRANCH_SORT_CODE" type="varchar(10)">
-                <constraints nullable="false" notNullConstraintName="user.branch_sort_code_not_null_constraint"></constraints>
+            <column name="IS_CASH" type="NUMBER(1, 0)">
+                <constraints nullable="false"/>
             </column>
-
-            <column name="ACTIVE" defaultValue="true" type="boolean">
-                <constraints nullable="false" notNullConstraintName="user_active_not_null_constraint"></constraints>
-            </column>
-
-            <column name="DESCRIPTION" type="varchar(250)" ></column>
+            <column name="IS_DELETED" type="NUMBER(1, 0)" defaultValueNumeric="0" />
+            <column name="TRANSIT_ACCOUNT" type="VARCHAR2(20 CHAR)"/>
+            <column name="VERSION_NUM" type="NUMBER(10, 0)"/>
 
             <!--Audit fields -->
 <!--            <column name="CREATED_DATE" type="timestamp(6)">-->

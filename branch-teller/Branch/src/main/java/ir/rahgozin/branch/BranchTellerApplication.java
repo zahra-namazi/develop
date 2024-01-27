@@ -1,14 +1,17 @@
 package ir.rahgozin.branch;
 
+
 import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.time.LocalDateTime;
 
 @EnableWebMvc
 @SpringBootApplication
+@EnableFeignClients
 @Log4j2
 public class BranchTellerApplication {
 

@@ -7,7 +7,10 @@ management:
       exposure:
         include: "*"
     enabled-by-default: true
+
 spring:
+  jpa:
+    database-platform: org.hibernate.dialect.OracleDialect
   messages:
     basename: i18n/branch-messages,i18n/base-messages,i18n/user-management-messages
   security:
@@ -19,8 +22,14 @@ spring:
         provider:
           blubank:
             issuer-uri: http://localhost:8080/realms/blubank
+
 keycloak:
   enabled: true
+  auth-server-url: http://localhost:8080/auth
+  realm: blubank
+  resource: branch-channel
+  credentials:
+      secret: branch-channel-secret
 
 logging:
   level:

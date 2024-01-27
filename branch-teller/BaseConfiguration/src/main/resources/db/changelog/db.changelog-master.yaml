@@ -1,3 +1,5 @@
 databaseChangeLog:
   - include:
       file: db/changelog/user-management/db.changelog-xml-user-management.xml
+  - include:
+      file: db/changelog/monetary-instrument/db.changelog-xml-monetary-instrument.xml

@@ -7,24 +7,30 @@
         <artifactId>branch-teller-parent</artifactId>
         <version>0.0.1</version>
     </parent>
-    <groupId>ir.rahgozin.branch.teller</groupId>
+
     <artifactId>branch-teller</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>BranchTeller</name>
     <description>Branch Teller Service</description>
+
     <properties>
         <java.version>21</java.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>ir.rahgozin.branch.teller</groupId>
             <artifactId>base-configuration</artifactId>
-            <version>0.0.1</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>ir.rahgozin.branch.teller</groupId>
             <artifactId>user-management</artifactId>
-            <version>0.0.1</version>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ir.rahgozin.branch.teller</groupId>
+            <artifactId>external-service</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
